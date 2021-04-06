@@ -1,0 +1,15 @@
+version: 0.2
+
+phases:
+  pre_build:
+   commands:
+       - echo "creating <path-to-folder> folder"
+       - mkdir -p ./<path-to-folder>/
+  build:
+    commands:
+        - echo "Copying the file"
+        - cp index.html ./<path-to-folder>/
+artifacts:
+   files:
+      - <path-to-folder>/**/*
+      - appspec.yml

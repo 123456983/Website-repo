@@ -1,17 +1,22 @@
 version: 0.0
 os: linux
 files:
-  - source: <path-to-folder>/index.html
-    destination: /var/www/html/
+  - source: /index.html
+    destination: /tmp
 hooks:
   BeforeInstall:
-    - location: <location-of-script-you-want-to-run>
+    - location: scripts/install_dependencies.sh
       timeout: 300
       runas: root
-    - location: <location-of-script-you-want-to-run>
+  AfterInstall:
+    - location: scripts/move_files.sh
       timeout: 300
       runas: root
   ApplicationStop:
-    - location: <location-of-script-you-want-to-run>
+    - location: scripts/stop_server.sh
+      timeout: 300
+      runas: root  
+  ApplicationStart:
+    - location: scripts/start_server.sh
       timeout: 300
       runas: root

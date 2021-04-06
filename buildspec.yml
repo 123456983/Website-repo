@@ -1,8 +1,0 @@
-version: 0.2
-phases:
-  pre_build:
-  commands:
-    - export LC_ALL="en_US.utf8"
-artifacts:
-   files:
-      - appspec.yml

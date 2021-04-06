@@ -1,12 +1,17 @@
 version: 0.0
 os: linux
 files:
-  - source: /index.html
-    destination: /var/www/html
+  - source: <path-to-folder>/index.html
+    destination: /var/www/html/
 hooks:
-  Before Install:
-    - location: stop.sh
+  BeforeInstall:
+    - location: <location-of-script-you-want-to-run>
       timeout: 300
-  After Install:
-    - location: start.sh
-      timeout: 300	
+      runas: root
+    - location: <location-of-script-you-want-to-run>
+      timeout: 300
+      runas: root
+  ApplicationStop:
+    - location: <location-of-script-you-want-to-run>
+      timeout: 300
+      runas: root

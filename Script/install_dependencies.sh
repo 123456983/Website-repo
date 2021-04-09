@@ -1,3 +1,4 @@
 #!/bin/bash
 
-yum update -y && yum upgrade -y
+yum update -y 
+yum install -y httpd

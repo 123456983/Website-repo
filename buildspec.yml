@@ -18,8 +18,10 @@ phases:
             - echo "we are in the post build phase"
   reports:
     arn:aws:codebuild:us-east-2.s3.us-east-2:nivedita.gangurde:report-group/report-group-name-1:
+    artifacts:
     files:
-      - "**/*"
+    - '**/*'
+    name: s3-to-s3-latest-build.zip
     base-directory: 'target/tests/reports'
     discard-paths: no
 artifacts:

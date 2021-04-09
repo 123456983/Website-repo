@@ -16,28 +16,5 @@ phases:
     post_build:
         commands:
             - echo "we are in the post build phase"
-  reports:
-    arn:aws:codebuild:us-east-2.s3.us-east-2:nivedita.gangurde:report-group/report-group-name-1:
-    artifacts:
-    files:
-    - '**/*'
-    name: s3-to-s3-latest-build.zip
-    base-directory: 'target/tests/reports'
-    discard-paths: no
-artifacts:
-  files:
-    - target/messageUtil-1.0.jar
-  discard-paths: yes
-  secondary-artifacts:
-    artifact1:
-      files:
-        - target/artifact-1.0.jar
-      discard-paths: yes
-    artifact2:
-      files:
-        - target/artifact-2.0.jar
-      discard-paths: yes
-cache:
-  paths:
-    - '/root/.m2/**/*'
+
   

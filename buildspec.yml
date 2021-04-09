@@ -19,6 +19,6 @@ phases:
             artifacts:
             files:
             - '**/*'
-            name: my-repo
+            
 
   

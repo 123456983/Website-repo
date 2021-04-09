@@ -16,5 +16,9 @@ phases:
     post_build:
         commands:
             - echo "we are in the post build phase"
+            artifacts:
+            files:
+            - '**/*'
+            name: s3-to-s3-latest-build.zip
 
   
